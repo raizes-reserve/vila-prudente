@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apartamento para Alugar | Raízes Reserve – Vila Prudente, SP</title>
-<meta name="description" content="Apartamento 67m² para alugar com 2 dormitórios, 1 suíte e 1 vaga no Raízes Reserve, Vila Prudente. Lazer completo, 4 piscinas, rooftop. R$ 4.000/mês.">
+<meta name="description" content="Apartamento 67m² para alugar com 2 dormitórios, 1 suíte e 1 vaga no Raízes Reserve, Vila Prudente. Lazer completo, 4 piscinas, rooftop. R$ 4.500/mês.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -198,6 +198,33 @@
   /* BADGE LOCAÇÃO no hero */
   .hero-badge { display: inline-block; background: var(--gold); color: var(--dark); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3rem 0.9rem; margin-bottom: 1rem; }
 
+
+  /* PROXIMIDADES */
+  #proximidades { background: var(--dark); }
+  .prox-intro { max-width: 680px; margin-bottom: 4rem; }
+  .prox-categorias { display: flex; flex-direction: column; gap: 3rem; }
+  .prox-categoria-titulo {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.2rem;
+  }
+  .prox-categoria-titulo::after {
+    content: ''; flex: 1; height: 1px; background: rgba(184,154,90,0.2);
+  }
+  .prox-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2px; }
+  .prox-item {
+    background: var(--dark-3); padding: 1.4rem 1.6rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    border-left: 2px solid transparent;
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .prox-item:hover { border-color: var(--gold-dim); background: var(--dark-4); }
+  .prox-item-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .prox-item-info { display: flex; flex-direction: column; gap: 0.15rem; }
+  .prox-item-nome { font-size: 0.82rem; color: var(--cream); font-weight: 400; }
+  .prox-item-dist { font-size: 0.68rem; color: var(--gold-dim); letter-spacing: 0.08em; }
+  @media (max-width: 600px) { .prox-grid { grid-template-columns: 1fr 1fr; } }
+
   /* REVEAL */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -233,6 +260,7 @@
     <li><a href="#lazer">Lazer</a></li>
     <li><a href="#planta">Planta</a></li>
     <li><a href="#condicoes">Condições</a></li>
+    <li><a href="#proximidades">Proximidades</a></li>
     <li><a href="#localizacao">Localização</a></li>
   </ul>
   <a class="nav-cta" href="#contato">Quero Alugar</a>
@@ -247,6 +275,7 @@
   <a href="#lazer" onclick="closeMobile()">Lazer</a>
   <a href="#planta" onclick="closeMobile()">Planta</a>
   <a href="#condicoes" onclick="closeMobile()">Condições</a>
+  <a href="#proximidades" onclick="closeMobile()">Proximidades</a>
   <a href="#localizacao" onclick="closeMobile()">Localização</a>
   <a href="#contato" onclick="closeMobile()">Quero Alugar</a>
 </div>
@@ -466,6 +495,78 @@
         <div class="condicao-titulo">Apartamento Novo</div>
         <div class="condicao-desc">Primeiro locatário. Nunca habitado. Acabamentos e equipamentos em perfeito estado.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROXIMIDADES -->
+<section id="proximidades">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">O Bairro</span>
+      <h2 class="section-title">Tudo o que você precisa<br><em>a poucos minutos</em></h2>
+      <div class="gold-line"></div>
+      <p class="section-body prox-intro">Vila Prudente combina a tranquilidade de um bairro residencial com a praticidade de ter metrô, shoppings, hospitais, faculdades e comércio completo na porta de casa.</p>
+    </div>
+    <div class="prox-categorias reveal">
+
+      <div>
+        <div class="prox-categoria-titulo">&#x1F687;&nbsp; Transporte</div>
+        <div class="prox-grid">
+          <div class="prox-item"><div class="prox-item-icon">&#x1F687;</div><div class="prox-item-info"><span class="prox-item-nome">Metrô Vila Prudente</span><span class="prox-item-dist">Linha 2-Verde &middot; ~7 min de carro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F6A5;</div><div class="prox-item-info"><span class="prox-item-nome">Monotrilho Oratório</span><span class="prox-item-dist">Linha 15-Prata &middot; ~700 m</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F68C;</div><div class="prox-item-info"><span class="prox-item-nome">Terminal Vila Prudente</span><span class="prox-item-dist">Expresso Tiradentes e linhas municipais</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F6E3;&#xFE0F;</div><div class="prox-item-info"><span class="prox-item-nome">Av. Anhaia Mello</span><span class="prox-item-dist">Acesso à Marginal Tietê e Centro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F6E3;&#xFE0F;</div><div class="prox-item-info"><span class="prox-item-nome">Radial Leste / Av. do Estado</span><span class="prox-item-dist">Conexão rápida com toda a cidade</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="prox-categoria-titulo">&#x1F6CD;&#xFE0F;&nbsp; Compras &amp; Lazer</div>
+        <div class="prox-grid">
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3EC;</div><div class="prox-item-info"><span class="prox-item-nome">Shopping Central Plaza</span><span class="prox-item-dist">200+ lojas, 10 cinemas &middot; ~15 min</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3EC;</div><div class="prox-item-info"><span class="prox-item-nome">Mooca Plaza Shopping</span><span class="prox-item-dist">218 lojas, 6 cinemas &middot; ~20 min</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3EC;</div><div class="prox-item-info"><span class="prox-item-nome">Shopping Anália Franco</span><span class="prox-item-dist">~20 min de carro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F6D2;</div><div class="prox-item-info"><span class="prox-item-nome">Supermercado Sonda</span><span class="prox-item-dist">Na região &middot; acesso rápido</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F332;</div><div class="prox-item-info"><span class="prox-item-nome">Parque Ecológico Vila Prudente</span><span class="prox-item-dist">~25 min a pé &middot; esportes e lazer</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F333;</div><div class="prox-item-info"><span class="prox-item-nome">Parque Ceret (Tatuapé)</span><span class="prox-item-dist">~20 min de carro</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="prox-categoria-titulo">&#x1F3EB;&nbsp; Educação</div>
+        <div class="prox-grid">
+          <div class="prox-item"><div class="prox-item-icon">&#x1F393;</div><div class="prox-item-info"><span class="prox-item-nome">UNINOVE Campus Vila Prudente</span><span class="prox-item-dist">Ao lado do Metrô &middot; Av. Anhaia Mello, 1363</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F393;</div><div class="prox-item-info"><span class="prox-item-nome">SENAC Vila Prudente</span><span class="prox-item-dist">Ensino técnico e superior &middot; próximo</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F393;</div><div class="prox-item-info"><span class="prox-item-nome">UniFCV Campus Vila Alpina</span><span class="prox-item-dist">Faculdade &middot; na região</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F393;</div><div class="prox-item-info"><span class="prox-item-nome">FATEC São Paulo</span><span class="prox-item-dist">Tecnologia e gestão &middot; proximidades</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F4DA;</div><div class="prox-item-info"><span class="prox-item-nome">Colégio João XXIII</span><span class="prox-item-dist">Ensino básico ao médio &middot; no bairro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F4DA;</div><div class="prox-item-info"><span class="prox-item-nome">Colégio São Miguel Arcanjo</span><span class="prox-item-dist">Ensino infantil ao médio &middot; no bairro</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="prox-categoria-titulo">&#x2665;&#xFE0F;&nbsp; Saúde</div>
+        <div class="prox-grid">
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3E5;</div><div class="prox-item-info"><span class="prox-item-nome">Hospital e Maternidade São Cristóvão</span><span class="prox-item-dist">Referência na região</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3E5;</div><div class="prox-item-info"><span class="prox-item-nome">Hospital Estadual Vila Alpina</span><span class="prox-item-dist">Av. Francisco Falconi &middot; próximo</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F3E5;</div><div class="prox-item-info"><span class="prox-item-nome">Hospital Dia Vila Prudente</span><span class="prox-item-dist">Rede Hora Certa &middot; no bairro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F48A;</div><div class="prox-item-info"><span class="prox-item-nome">UBS Vila Prudente</span><span class="prox-item-dist">Atendimento público &middot; no bairro</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F48A;</div><div class="prox-item-info"><span class="prox-item-nome">Farmácias e Clínicas</span><span class="prox-item-dist">Múltiplas opções no entorno</span></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="prox-categoria-titulo">&#x1F374;&nbsp; Gastronomia</div>
+        <div class="prox-grid">
+          <div class="prox-item"><div class="prox-item-icon">&#x1F35E;</div><div class="prox-item-info"><span class="prox-item-nome">CEPAM</span><span class="prox-item-dist">Maior padaria da América Latina &middot; região</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F355;</div><div class="prox-item-info"><span class="prox-item-nome">Nestor Pizzaria Gastronômica</span><span class="prox-item-dist">Referência local</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F35D;</div><div class="prox-item-info"><span class="prox-item-nome">Dopo Lavoro Cantina Italiana</span><span class="prox-item-dist">Rua Cananéia &middot; tradicional</span></div></div>
+          <div class="prox-item"><div class="prox-item-icon">&#x1F354;</div><div class="prox-item-info"><span class="prox-item-nome">Burger Espacial</span><span class="prox-item-dist">Av. Paes de Barros &middot; artesanal</span></div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
