@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartamento à Venda | Raízes Reserve – Vila Prudente, SP</title>
+<meta name="description" content="Apartamento 67m² com 2 dormitórios, 1 suíte e 1 vaga no Raízes Reserve, Vila Prudente. Lazer completo, 4 piscinas, rooftop. R$ 790.000.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #b89a5a; --gold-light: #d4b87a; --gold-dim: #7a6438;
+    --dark: #0e0d0b; --dark-2: #161410; --dark-3: #1e1c17; --dark-4: #2a2720;
+    --cream: #f0e8d8; --cream-dim: #c8bca8; --white: #faf8f4;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Jost', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--dark); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 3rem; background: linear-gradient(to bottom, rgba(14,13,11,0.95), rgba(14,13,11,0)); backdrop-filter: blur(2px); transition: background 0.4s; }
+  nav.scrolled { background: rgba(14,13,11,0.97); }
+  .nav-logo { font-family: var(--font-display); font-size: 1.1rem; font-weight: 300; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--cream-dim); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: transparent; border: 1px solid var(--gold); color: var(--gold); padding: 0.55rem 1.4rem; font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: background 0.3s, color 0.3s; }
+  .nav-cta:hover { background: var(--gold); color: var(--dark); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 1px; background: var(--gold); display: block; }
+
+  /* HERO */
+  #hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; background-image: url('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/08-Fachadas-A-e-B.jpg'); background-size: cover; background-position: center; transform: scale(1.05); animation: heroZoom 12s ease-out forwards; }
+  @keyframes heroZoom { to { transform: scale(1); } }
+  .hero-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(14,13,11,0.75) 0%, rgba(14,13,11,0.62) 45%, rgba(14,13,11,0.94) 100%); }
+  .hero-content { position: relative; z-index: 2; max-width: 820px; padding: 2rem; animation: fadeUp 1.2s ease 0.3s both; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+  .hero-tag { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-light); margin-bottom: 1.5rem; display: inline-block; background: rgba(14,13,11,0.55); border: 1px solid var(--gold-dim); padding: 0.45rem 1.2rem; text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
+  .hero-title { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 400; line-height: 1.1; color: var(--white); margin-bottom: 0.5rem; text-shadow: 0 2px 20px rgba(0,0,0,0.9), 0 1px 4px rgba(0,0,0,1); }
+  .hero-title em { font-style: italic; color: var(--gold-light); }
+  .hero-subtitle { font-family: var(--font-display); font-size: clamp(1rem, 2vw, 1.4rem); font-weight: 300; color: var(--cream); letter-spacing: 0.08em; margin-bottom: 2.5rem; text-shadow: 0 1px 8px rgba(0,0,0,0.9); }
+  .hero-specs { display: inline-flex; gap: 0; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; background: rgba(14,13,11,0.65); border: 1px solid rgba(184,154,90,0.25); backdrop-filter: blur(4px); padding: 1.5rem 2rem; }
+  .hero-spec { text-align: center; padding: 0 2rem; }
+  .hero-spec-val { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+  .hero-spec-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream); margin-top: 0.3rem; }
+  .hero-divider { width: 1px; height: 40px; background: var(--gold-dim); align-self: center; }
+  .hero-price { font-family: var(--font-display); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; color: var(--white); letter-spacing: 0.05em; margin-top: 2rem; margin-bottom: 2rem; text-shadow: 0 2px 12px rgba(0,0,0,1); background: rgba(14,13,11,0.6); display: inline-block; padding: 0.6rem 2rem; border-left: 3px solid var(--gold); }
+  .hero-price span { color: var(--gold); }
+  .btn-primary { display: inline-block; background: var(--gold); color: var(--dark); font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; transition: background 0.3s, transform 0.2s; margin: 0 0.5rem 0.5rem; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+  .btn-outline { display: inline-block; border: 1px solid var(--cream-dim); color: var(--cream); font-family: var(--font-body); font-size: 0.75rem; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 1rem 2.8rem; transition: border-color 0.3s, color 0.3s, transform 0.2s; margin: 0 0.5rem 0.5rem; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-scroll { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: var(--gold-dim); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; animation: bounce 2s ease-in-out infinite; }
+  .hero-scroll::after { content: ''; display: block; width: 1px; height: 40px; background: linear-gradient(to bottom, var(--gold-dim), transparent); }
+  @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* SECTIONS */
+  section { padding: 7rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-tag { font-size: 0.68rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+  .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.2; color: var(--white); margin-bottom: 1.5rem; }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+  .gold-line { width: 60px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
+  .section-body { font-size: 0.95rem; color: var(--cream-dim); max-width: 600px; line-height: 1.9; }
+
+  /* SOBRE */
+  #sobre { background: var(--dark-2); }
+  .specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2px; margin-top: 4rem; }
+  .spec-card { background: var(--dark-3); padding: 2.5rem 2rem; border-top: 2px solid var(--gold-dim); transition: border-color 0.3s, background 0.3s; }
+  .spec-card:hover { border-color: var(--gold); background: var(--dark-4); }
+  .spec-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .spec-val { font-family: var(--font-display); font-size: 2.4rem; font-weight: 300; color: var(--gold-light); line-height: 1; }
+  .spec-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); margin-top: 0.5rem; }
+  .spec-detail { font-size: 0.82rem; color: var(--gold-dim); margin-top: 0.3rem; }
+
+  /* GALERIA */
+  #galeria { background: var(--dark); }
+  .gallery-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 260px 260px; gap: 3px; margin-top: 3rem; }
+  .gallery-item { overflow: hidden; position: relative; cursor: pointer; }
+  .gallery-item:first-child { grid-row: 1 / 3; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.06); }
+  .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(14,13,11,0.85)); padding: 1.5rem 1rem 0.8rem; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); opacity: 0; transition: opacity 0.3s; }
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+
+  /* LAZER */
+  #lazer { background: var(--dark-2); }
+  .lazer-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .lazer-img-wrap { position: relative; }
+  .lazer-img-wrap img { width: 100%; display: block; }
+  .lazer-img-wrap::before { content: ''; position: absolute; top: -12px; left: -12px; right: 12px; bottom: 12px; border: 1px solid var(--gold-dim); z-index: -1; }
+  .lazer-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem 2rem; margin-top: 2.5rem; list-style: none; }
+  .lazer-list li { font-size: 0.8rem; color: var(--cream-dim); letter-spacing: 0.08em; padding: 0.5rem 0; border-bottom: 1px solid rgba(184,154,90,0.12); display: flex; align-items: center; gap: 0.6rem; }
+  .lazer-list li::before { content: '—'; color: var(--gold-dim); font-size: 0.7rem; }
+
+  /* PLANTA */
+  #planta { background: var(--dark); }
+  .planta-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; margin-top: 3rem; }
+  .planta-img { background: var(--dark-3); padding: 2rem; cursor: zoom-in; position: relative; overflow: hidden; }
+  .planta-img img { width: 100%; display: block; filter: brightness(1.05); transition: transform 0.4s ease; }
+  .planta-img:hover img { transform: scale(1.03); }
+  .planta-zoom-hint { position: absolute; bottom: 1.5rem; right: 1.5rem; background: rgba(14,13,11,0.82); border: 1px solid var(--gold-dim); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.12em; padding: 0.45rem 1rem; pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+  .planta-img:hover .planta-zoom-hint { opacity: 1; }
+  .planta-specs { display: flex; flex-direction: column; gap: 1.5rem; }
+  .planta-spec-row { display: flex; align-items: baseline; gap: 1rem; border-bottom: 1px solid rgba(184,154,90,0.15); padding-bottom: 1.2rem; }
+  .planta-spec-num { font-family: var(--font-display); font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; min-width: 3rem; }
+  .planta-spec-text { font-size: 0.82rem; color: var(--cream-dim); letter-spacing: 0.1em; }
+  .planta-spec-text strong { display: block; color: var(--cream); font-weight: 400; font-size: 0.92rem; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; z-index: 500; background: rgba(14,13,11,0.96); align-items: center; justify-content: center; cursor: zoom-out; }
+  .lightbox.open { display: flex; animation: lbFadeIn 0.3s ease; }
+  @keyframes lbFadeIn { from { opacity:0; } to { opacity:1; } }
+  .lightbox-inner { position: relative; max-width: 92vw; max-height: 90vh; animation: lbZoomIn 0.35s cubic-bezier(0.22,1,0.36,1); }
+  @keyframes lbZoomIn { from { transform: scale(0.88); opacity:0; } to { transform: scale(1); opacity:1; } }
+  .lightbox-inner img { max-width: 92vw; max-height: 90vh; object-fit: contain; display: block; box-shadow: 0 30px 80px rgba(0,0,0,0.8); cursor: default; }
+  .lightbox-close { position: absolute; top: -2.8rem; right: 0; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s, transform 0.2s; font-family: sans-serif; }
+  .lightbox-close:hover { color: var(--white); transform: rotate(90deg); }
+  .lightbox-caption { position: absolute; bottom: -2rem; left: 0; right: 0; text-align: center; font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); }
+
+  /* LOCALIZACAO */
+  #localizacao { background: var(--dark-2); }
+  .loc-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+  .loc-map { background: var(--dark-3); overflow: hidden; min-height: 360px; }
+  .loc-map iframe { width: 100%; height: 100%; min-height: 360px; border: none; filter: grayscale(80%) invert(92%) hue-rotate(180deg); }
+  .loc-address { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; color: var(--gold-light); margin-bottom: 2rem; line-height: 1.3; }
+  .loc-pontos { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .loc-pontos li { display: flex; align-items: center; gap: 1rem; font-size: 0.82rem; color: var(--cream-dim); border-bottom: 1px solid rgba(184,154,90,0.12); padding-bottom: 0.8rem; }
+  .loc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+  /* PRECO */
+  #preco { background: var(--dark-3); text-align: center; padding: 6rem 2rem; }
+  .price-box { max-width: 680px; margin: 0 auto; }
+  .price-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1rem; display: block; }
+  .price-val { font-family: var(--font-display); font-size: clamp(3rem, 7vw, 6rem); font-weight: 300; color: var(--white); line-height: 1; margin-bottom: 0.5rem; }
+  .price-val span { color: var(--gold); }
+  .price-note { font-size: 0.78rem; color: var(--cream-dim); margin-bottom: 3rem; }
+  .price-tags { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; }
+  .price-tag { border: 1px solid var(--gold-dim); padding: 0.5rem 1.4rem; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold-dim); }
+  .price-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* CONTATO */
+  #contato { background: var(--dark-2); }
+  .contato-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .contato-info h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 300; color: var(--white); margin-bottom: 1rem; }
+  .contato-proprietario { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .contato-item { display: flex; gap: 1rem; align-items: center; }
+  .contato-item-icon { width: 42px; height: 42px; border: 1px solid var(--gold-dim); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+  .contato-item-text { font-size: 0.82rem; color: var(--cream-dim); }
+  .contato-item-text strong { display: block; color: var(--cream); font-size: 0.9rem; margin-bottom: 0.1rem; }
+  form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+  label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-dim); }
+  input, textarea, select { background: var(--dark-3); border: 1px solid rgba(184,154,90,0.2); color: var(--cream); padding: 0.9rem 1rem; font-family: var(--font-body); font-size: 0.85rem; font-weight: 300; outline: none; transition: border-color 0.3s; width: 100%; }
+  input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+  textarea { resize: vertical; min-height: 120px; }
+  select option { background: var(--dark-3); }
+  .form-submit { background: var(--gold); border: none; color: var(--dark); font-family: var(--font-body); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; padding: 1.1rem 2rem; cursor: pointer; transition: background 0.3s, transform 0.2s; width: 100%; }
+  .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .form-success { display: none; text-align: center; padding: 2rem; background: rgba(184,154,90,0.1); border: 1px solid var(--gold-dim); color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid rgba(184,154,90,0.15); padding: 3rem 2rem; text-align: center; }
+  .footer-logo { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; color: var(--gold); letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 1rem; }
+  .footer-note { font-size: 0.68rem; color: var(--cream-dim); letter-spacing: 0.08em; line-height: 1.8; max-width: 600px; margin: 0 auto; }
+
+  /* WA FLOAT */
+  .wa-float { position: fixed; bottom: 2rem; right: 2rem; z-index: 200; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(37,211,102,0.4); text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; animation: waPulse 3s ease-in-out infinite; }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+  @keyframes waPulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 32px rgba(37,211,102,0.7)} }
+  .wa-float svg { width: 28px; height: 28px; fill: white; }
+  .wa-tooltip { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); background: var(--dark-3); color: var(--cream); white-space: nowrap; font-size: 0.72rem; letter-spacing: 0.1em; padding: 0.5rem 1rem; border: 1px solid var(--gold-dim); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+
+  /* MOBILE MENU */
+  .mobile-menu { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(14,13,11,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--font-display); font-size: 2rem; font-weight: 300; color: var(--cream); text-decoration: none; letter-spacing: 0.1em; transition: color 0.3s; }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 1.5rem; color: var(--gold-dim); cursor: pointer; background: none; border: none; }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; }
+    .lazer-intro, .planta-wrap, .loc-wrap, .contato-wrap { grid-template-columns: 1fr; gap: 3rem; }
+    .lazer-img-wrap::before { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 5rem 1.2rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr 1fr; }
+    .hero-specs { padding: 1rem; }
+    .hero-spec { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">Raízes Reserve</a>
+  <ul class="nav-links">
+    <li><a href="#sobre">O Apartamento</a></li>
+    <li><a href="#galeria">Galeria</a></li>
+    <li><a href="#lazer">Lazer</a></li>
+    <li><a href="#planta">Planta</a></li>
+    <li><a href="#localizacao">Localização</a></li>
+  </ul>
+  <a class="nav-cta" href="#contato">Tenho Interesse</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">&#10005;</button>
+  <a href="#sobre" onclick="closeMobile()">O Apartamento</a>
+  <a href="#galeria" onclick="closeMobile()">Galeria</a>
+  <a href="#lazer" onclick="closeMobile()">Lazer</a>
+  <a href="#planta" onclick="closeMobile()">Planta</a>
+  <a href="#localizacao" onclick="closeMobile()">Localização</a>
+  <a href="#contato" onclick="closeMobile()">Tenho Interesse</a>
+</div>
+
+<!-- LIGHTBOX DA PLANTA -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="closeLightboxBtn()">&#10005;</button>
+    <img src="planta-67m-detalhada.jpg" alt="Planta 67m² — 2 Dorms. com 1 Suíte · 1 Vaga">
+    <div class="lightbox-caption">67 m² &mdash; 2 Dorms. com 1 Suíte &middot; 1 Vaga &nbsp;|&nbsp; ESC ou clique fora para fechar</div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Vila Prudente &middot; São Paulo &middot; SP</span>
+    <h1 class="hero-title">Raízes <em>Reserve</em></h1>
+    <p class="hero-subtitle">Apartamento à Venda &mdash; Oportunidade de Investimento</p>
+    <div class="hero-specs">
+      <div class="hero-spec">
+        <div class="hero-spec-val">67<small style="font-size:1rem">m²</small></div>
+        <div class="hero-spec-label">Área Privativa</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-spec">
+        <div class="hero-spec-val">2</div>
+        <div class="hero-spec-label">Dormitórios</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-spec">
+        <div class="hero-spec-val">1</div>
+        <div class="hero-spec-label">Suíte</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-spec">
+        <div class="hero-spec-val">1</div>
+        <div class="hero-spec-label">Vaga</div>
+      </div>
+    </div>
+    <p class="hero-price"><span>R$</span> 790.000</p>
+    <a class="btn-primary" href="#contato">Tenho Interesse</a>
+    <a class="btn-outline" href="#galeria">Ver Galeria</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start" class="reveal">
+      <div>
+        <span class="section-tag">O Apartamento</span>
+        <h2 class="section-title">Sofisticação<br><em>pensada nos detalhes</em></h2>
+        <div class="gold-line"></div>
+        <p class="section-body">Apartamento na planta no empreendimento <strong style="color:var(--cream)">Raízes Reserve</strong>, da incorporadora Mitre — um dos lançamentos mais completos da Vila Prudente. Com 67m² de área privativa, arquitetura contemporânea e acabamentos premium, é a escolha ideal para quem busca qualidade de vida ou um investimento com alto potencial de valorização.</p>
+        <p class="section-body" style="margin-top:1.2rem">Vendido diretamente pelo proprietário, sem intermediação de corretora. Oportunidade de negociar condições diferenciadas e transferir o contrato com facilidade.</p>
+      </div>
+      <div>
+        <div class="specs-grid">
+          <div class="spec-card"><div class="spec-icon">📐</div><div class="spec-val">67</div><div class="spec-label">m² Privativo</div></div>
+          <div class="spec-card"><div class="spec-icon">🛏</div><div class="spec-val">2</div><div class="spec-label">Dormitórios</div><div class="spec-detail">1 suíte master</div></div>
+          <div class="spec-card"><div class="spec-icon">🏊</div><div class="spec-val">4</div><div class="spec-label">Piscinas</div><div class="spec-detail">Rooftop + torres</div></div>
+          <div class="spec-card"><div class="spec-icon">🚗</div><div class="spec-val">1</div><div class="spec-label">Vaga Privativa</div></div>
+          <div class="spec-card" style="grid-column:span 2"><div class="spec-icon">🏗</div><div class="spec-val" style="font-size:1.4rem">Em Obra</div><div class="spec-label">Planta — Mitre</div><div class="spec-detail">Previsão de entrega conforme cronograma Mitre</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">Galeria</span>
+      <h2 class="section-title">Perspectivas do <em>Empreendimento</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/08-Fachadas-A-e-B.jpg" alt="Fachada" loading="lazy">
+        <div class="gallery-caption">Fachada — Torres A e B</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/13-Piscina-13pav.jpg" alt="Piscina 13º Pavimento" loading="lazy">
+        <div class="gallery-caption">Piscina 13º Pavimento</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/52-Living-67m.jpg" alt="Living 67m²" loading="lazy">
+        <div class="gallery-caption">Living 67m²</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/28-Gourmet-torre-B.jpg" alt="Salão Gourmet" loading="lazy">
+        <div class="gallery-caption">Salão Gourmet</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/31-Sports-bar.jpg" alt="Sports Bar" loading="lazy">
+        <div class="gallery-caption">Sports Bar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAZER -->
+<section id="lazer">
+  <div class="section-inner">
+    <div class="lazer-intro reveal">
+      <div class="lazer-img-wrap">
+        <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/03-Piscina-Torre-A.jpg" alt="Lazer Raízes Reserve">
+      </div>
+      <div>
+        <span class="section-tag">Infraestrutura de Lazer</span>
+        <h2 class="section-title">Lazer que vai além<br><em>das opções</em></h2>
+        <div class="gold-line"></div>
+        <p class="section-body">Projetado para quem quer lembrar que está no topo. O Raízes Reserve entrega uma infraestrutura de lazer completa, com espaços que combinam sofisticação e bem-estar em cada andar.</p>
+        <ul class="lazer-list">
+          <li>4 Piscinas (Rooftop + Torres)</li><li>Fitness Completo</li>
+          <li>Salão Gourmet</li><li>Sports Bar</li>
+          <li>Sauna</li><li>Pet Place + Dog Wash</li>
+          <li>Playground</li><li>Brinquedoteca</li>
+          <li>Churrasqueira</li><li>Bicicletário</li>
+          <li>Lavanderia</li><li>Coworking</li>
+          <li>Lareira</li><li>Espaço Delivery</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANTA -->
+<section id="planta">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">Planta do Apartamento</span>
+      <h2 class="section-title">67m² &mdash; 2 Dorms.<br><em>com 1 Suíte &middot; 1 Vaga</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="planta-wrap reveal">
+      <div class="planta-img" onclick="openLightbox()">
+        <img src="planta-67m-detalhada.jpg" alt="Planta 67m² — 2 Dorms. com 1 Suíte · 1 Vaga">
+        <div class="planta-zoom-hint">&#128269; Clique para ampliar</div>
+      </div>
+      <div class="planta-specs">
+        <div class="planta-spec-row">
+          <div class="planta-spec-num">67</div>
+          <div class="planta-spec-text"><strong>m² de Área Privativa</strong>Aproveitamento inteligente do espaço</div>
+        </div>
+        <div class="planta-spec-row">
+          <div class="planta-spec-num">2</div>
+          <div class="planta-spec-text"><strong>Dormitórios</strong>1 suíte master + 1 dormitório</div>
+        </div>
+        <div class="planta-spec-row">
+          <div class="planta-spec-num">1</div>
+          <div class="planta-spec-text"><strong>Vaga de Garagem</strong>Inclusa no valor</div>
+        </div>
+        <div class="planta-spec-row">
+          <div class="planta-spec-num">&#10003;</div>
+          <div class="planta-spec-text"><strong>Living Integrado</strong>Sala + cozinha integradas</div>
+        </div>
+        <div class="planta-spec-row">
+          <div class="planta-spec-num">&#10003;</div>
+          <div class="planta-spec-text"><strong>Terraço Privativo</strong>Área externa com piso nivelado ao living</div>
+        </div>
+        <a class="btn-primary" href="#contato" style="margin-top:1rem;text-align:center">Solicitar Informações</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZACAO -->
+<section id="localizacao">
+  <div class="section-inner">
+    <div class="reveal">
+      <span class="section-tag">Localização</span>
+      <h2 class="section-title">Vila Prudente,<br><em>São Paulo</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="loc-wrap reveal">
+      <div class="loc-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.2!2d-46.5881!3d-23.5805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Jos%C3%A9+Zappi+363+Vila+Prudente+S%C3%A3o+Paulo!5e0!3m2!1spt-BR!2sbr!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Localização Raízes Reserve"></iframe>
+      </div>
+      <div>
+        <p class="loc-address">Rua José Zappi, 363<br>Vila Prudente<br>São Paulo – SP</p>
+        <ul class="loc-pontos">
+          <li><span class="loc-dot"></span>Metrô Vila Prudente (Linha 2-Verde)</li>
+          <li><span class="loc-dot"></span>Acesso rápido à Radial Leste e Av. do Estado</li>
+          <li><span class="loc-dot"></span>Próximo ao Parque do Ibirapuera (~15 min)</li>
+          <li><span class="loc-dot"></span>Supermercados, escolas e serviços na região</li>
+          <li><span class="loc-dot"></span>Bairro em franca valorização imobiliária</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECO -->
+<section id="preco">
+  <div class="price-box reveal">
+    <span class="price-label">Preço de Venda &middot; Direto com o Proprietário</span>
+    <div class="price-val"><span>R$</span> 790.000</div>
+    <p class="price-note">Valor negociável. Facilidades para transferência de contrato e financiamento.</p>
+    <div class="price-tags">
+      <span class="price-tag">Sem comissão de corretagem</span>
+      <span class="price-tag">Direto com proprietário</span>
+      <span class="price-tag">Planta — Mitre</span>
+    </div>
+    <div class="price-buttons">
+      <a class="btn-primary" href="https://wa.me/5511983197372?text=Ol%C3%A1%20Jefte!%20Vi%20o%20site%20do%20apartamento%20no%20Ra%C3%ADzes%20Reserve%20e%20tenho%20interesse.%20Podemos%20conversar%3F" target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <a class="btn-outline" href="#contato">Enviar Mensagem</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+  <div class="section-inner">
+    <div class="contato-wrap">
+      <div class="contato-info reveal">
+        <span class="section-tag">Contato</span>
+        <h2>Vamos <em style="font-style:italic;color:var(--gold-light)">conversar?</em></h2>
+        <div class="gold-line"></div>
+        <p class="section-body">Interessado no apartamento? Entre em contato diretamente com o proprietário. Sem intermediários, sem surpresas.</p>
+        <div class="contato-proprietario">
+          <div class="contato-item">
+            <div class="contato-item-icon">&#128100;</div>
+            <div class="contato-item-text"><strong>Jefte Barboza</strong>Proprietário · Venda direta</div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-item-icon">&#128241;</div>
+            <div class="contato-item-text"><strong>(11) 98319-7372</strong>WhatsApp disponível</div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-item-icon">&#9993;</div>
+            <div class="contato-item-text"><strong>jefte.barboza@gmail.com</strong>Resposta em até 24h</div>
+          </div>
+        </div>
+        <a class="btn-primary" href="https://wa.me/5511983197372?text=Ol%C3%A1%20Jefte!%20Vi%20o%20site%20do%20apartamento%20no%20Ra%C3%ADzes%20Reserve%20e%20tenho%20interesse.%20Podemos%20conversar%3F" target="_blank" rel="noopener" style="margin-top:2rem;display:inline-block">&#128172; Chamar no WhatsApp</a>
+      </div>
+      <div class="reveal">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nome">Nome *</label>
+              <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+            </div>
+            <div class="form-group">
+              <label for="tel">Telefone *</label>
+              <input type="tel" id="tel" name="tel" required placeholder="(11) 99999-9999">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+          <div class="form-group">
+            <label for="interesse">Interesse</label>
+            <select id="interesse" name="interesse">
+              <option value="">Selecione...</option>
+              <option>Moradia própria</option>
+              <option>Investimento / Renda</option>
+              <option>Revenda futura</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="msg" placeholder="Dúvidas, proposta ou horário para visita virtual..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">&#128172; Enviar pelo WhatsApp &rarr;</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          &#10003; WhatsApp aberto com sua mensagem! Caso não tenha aberto, <a href="https://wa.me/5511983197372" target="_blank" style="color:var(--gold)">clique aqui</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Raízes Reserve</div>
+  <p class="footer-note">Apartamento à venda diretamente pelo proprietário Jefte Barboza.<br>Empreendimento Raízes Reserve — Mitre Incorporadora. Rua José Zappi, 363 · Vila Prudente · São Paulo – SP</p>
+  <p class="footer-note" style="color:var(--gold-dim);margin-top:0.8rem">Imagens meramente ilustrativas. Incorporação registrada sob R.1, matrícula nº 251.280 do 6º Oficial de Registro de Imóveis de São Paulo/SP.</p>
+</footer>
+
+<!-- WA FLOAT -->
+<a class="wa-float" href="https://wa.me/5511983197372?text=Ol%C3%A1%20Jefte!%20Vi%20o%20site%20do%20apartamento%20no%20Ra%C3%ADzes%20Reserve%20e%20tenho%20interesse.%20Podemos%20conversar%3F" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <span class="wa-tooltip">Falar no WhatsApp</span>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.121 1.534 5.856L.057 23.5l5.797-1.516A11.954 11.954 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.374l-.36-.214-3.44.9.917-3.348-.234-.374A9.818 9.818 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+  </svg>
+</a>
+
+<script>
+  // Nav scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+
+  // Mobile menu
+  document.getElementById('hamburger').addEventListener('click', () => { document.getElementById('mobileMenu').classList.add('open'); });
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Lightbox
+  function openLightbox() {
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightboxBtn() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function closeLightbox(e) {
+    if (e.target === document.getElementById('lightbox')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+  });
+
+  // Form -> WhatsApp
+  function submitForm(e) {
+    e.preventDefault();
+    var nome = document.getElementById('nome').value.trim();
+    var tel = document.getElementById('tel').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var interesse = document.getElementById('interesse').value || 'Não informado';
+    var msg = document.getElementById('msg').value.trim();
+    var texto = "Olá Jefte! Tenho interesse no apartamento do Raízes Reserve. Seguem meus dados:\n\n"
+      + "Nome: " + nome + "\nTelefone: " + tel + "\nE-mail: " + email + "\nInteresse: " + interesse
+      + (msg ? "\n\nMensagem:\n" + msg : "") + "\n\nPodemos conversar?";
+    window.open("https://wa.me/5511983197372?text=" + encodeURIComponent(texto), '_blank');
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
