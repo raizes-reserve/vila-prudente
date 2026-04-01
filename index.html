@@ -85,6 +85,8 @@
   .gallery-item:hover img { transform: scale(1.06); }
   .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(14,13,11,0.85)); padding: 1.5rem 1rem 0.8rem; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); opacity: 0; transition: opacity 0.3s; }
   .gallery-item:hover .gallery-caption { opacity: 1; }
+  .gallery-zoom-hint { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 1.8rem; opacity: 0; transition: opacity 0.3s; pointer-events: none; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.8)); }
+  .gallery-item:hover .gallery-zoom-hint { opacity: 1; }
 
   /* LAZER */
   #lazer { background: var(--dark-2); }
@@ -234,12 +236,12 @@
   <a href="#contato" onclick="closeMobile()">Tenho Interesse</a>
 </div>
 
-<!-- LIGHTBOX DA PLANTA -->
+<!-- LIGHTBOX UNIVERSAL -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <div class="lightbox-inner">
     <button class="lightbox-close" onclick="closeLightboxBtn()">&#10005;</button>
-    <img src="planta-67m-detalhada.jpg" alt="Planta 67m² — 2 Dorms. com 1 Suíte · 1 Vaga">
-    <div class="lightbox-caption">67 m² &mdash; 2 Dorms. com 1 Suíte &middot; 1 Vaga &nbsp;|&nbsp; ESC ou clique fora para fechar</div>
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-caption" id="lightbox-caption">ESC ou clique fora para fechar</div>
   </div>
 </div>
 
@@ -312,24 +314,29 @@
       <div class="gold-line"></div>
     </div>
     <div class="gallery-grid reveal">
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openLightboxImg('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/08-Fachadas-A-e-B.jpg','Fachada')">
         <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/08-Fachadas-A-e-B.jpg" alt="Fachada" loading="lazy">
+        <div class="gallery-zoom-hint">&#128269;</div>
         <div class="gallery-caption">Fachada — Torres A e B</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openLightboxImg('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/13-Piscina-13pav.jpg','Piscina 13º Pavimento')">
         <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/13-Piscina-13pav.jpg" alt="Piscina 13º Pavimento" loading="lazy">
+        <div class="gallery-zoom-hint">&#128269;</div>
         <div class="gallery-caption">Piscina 13º Pavimento</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openLightboxImg('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/52-Living-67m.jpg','Living 67m²')">
         <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/52-Living-67m.jpg" alt="Living 67m²" loading="lazy">
+        <div class="gallery-zoom-hint">&#128269;</div>
         <div class="gallery-caption">Living 67m²</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openLightboxImg('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/28-Gourmet-torre-B.jpg','Salão Gourmet')">
         <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/28-Gourmet-torre-B.jpg" alt="Salão Gourmet" loading="lazy">
+        <div class="gallery-zoom-hint">&#128269;</div>
         <div class="gallery-caption">Salão Gourmet</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" onclick="openLightboxImg('https://www.raizesreserve.com.br/wp-content/uploads/2022/08/31-Sports-bar.jpg','Sports Bar')">
         <img src="https://www.raizesreserve.com.br/wp-content/uploads/2022/08/31-Sports-bar.jpg" alt="Sports Bar" loading="lazy">
+        <div class="gallery-zoom-hint">&#128269;</div>
         <div class="gallery-caption">Sports Bar</div>
       </div>
     </div>
@@ -372,7 +379,7 @@
     </div>
     <div class="planta-wrap reveal">
       <div class="planta-img" onclick="openLightbox()">
-        <img src="planta-67m-detalhada.jpg" alt="Planta 67m² — 2 Dorms. com 1 Suíte · 1 Vaga">
+        <img src="planta-67m-detalhada.jpg" alt="Planta 67m² — 2 Dorms. com 1 Suíte · 1 Vaga" onerror="this.onerror=null;this.src='https://www.raizesreserve.com.br/wp-content/themes/raizesmoocareserve/assets/images/plantas/planta-68m.jpg'">
         <div class="planta-zoom-hint">&#128269; Clique para ampliar</div>
       </div>
       <div class="planta-specs">
@@ -543,10 +550,16 @@
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // Lightbox
-  function openLightbox() {
+  // Lightbox universal
+  function openLightboxImg(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = (caption || '') + '  |  ESC ou clique fora para fechar';
     document.getElementById('lightbox').classList.add('open');
     document.body.style.overflow = 'hidden';
+  }
+  function openLightbox() {
+    var img = document.querySelector('.planta-img img');
+    openLightboxImg(img ? img.src : 'planta-67m-detalhada.jpg', '67 m² — 2 Dorms. com 1 Suíte · 1 Vaga');
   }
   function closeLightboxBtn() {
     document.getElementById('lightbox').classList.remove('open');
